@@ -1,5 +1,8 @@
 {
-    "aws_region": "eu-west-2",
+    "aws_region": "eu-north-1",
     "data_bucket": "schiff-trades-2021",
-    "bot_to_worker_queue_name": "schiff-sqs"
+    "bot_to_worker_queue_name": "danishain-sqs-aws-ex1"
   }
+
+
+
