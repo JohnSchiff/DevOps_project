@@ -92,6 +92,13 @@ def Output_Table(df):
 
 st.title("Options Data")
 if st.button("TEST STRATEGY"):
-    mean_result = Output_Table(df)
-    st.write("Result:", mean_result)
+    results = Output_Table(df)
+    st.write("Result:", results)
 
+st.title("Save to S3")
+if st.button("Save Results"):
+    results = Output_Table(df)
+    results.to_csv(f"diff{delta}open{open_time}close{close_time}.csv")
+    s3.upload_file(f"diff{delta}open{open_time}close{close_time}.csv", "strategy-result-1",f"diff{delta}open{open_time}close{close_time}.csv")
+
+    st.write("Results Saved!")
