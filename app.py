@@ -100,5 +100,4 @@ if st.button("Save Results"):
     results = Output_Table(df)
     results.to_csv(f"diff{delta}open{open_time}close{close_time}.csv")
     s3.upload_file(f"diff{delta}open{open_time}close{close_time}.csv", "strategy-result-1",f"diff{delta}open{open_time}close{close_time}.csv")
-
     st.write("Results Saved!")
